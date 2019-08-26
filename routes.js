@@ -1,8 +1,8 @@
 import Home from './routes/Home';
-import Intro from './routes/Intro';
 import Syllabus from './routes/Syllabus';
-import Week1 from './routes/Week1';
-import KeyAreas from './routes/KeyAreas';
+import Outline from './routes/Outline';
+import Resources from './routes/Resources';
+import Instructor from './routes/Instructor';
 
 export default [
   {
@@ -11,25 +11,23 @@ export default [
     component: Home,
   },
   {
-    title: 'Introduction',
-    slug: 'intro',
-    component: Intro,
-  },
-  {
     title: 'Syllabus',
     slug: 'syllabus',
     component: Syllabus,
   },
   {
-    title: 'Week 1',
-    slug: 'week1',
-    component: Week1,
-    children: [
-      {
-        title: 'Key Areas of Data Journalism',
-        slug: 'key-areas',
-        component: KeyAreas,
-      },
-    ],
+    title: 'Outline',
+    slug: 'outline',
+    component: Outline,
+  },
+  {
+    title: 'Resources',
+    slug: 'resources',
+    component: Resources,
+  },
+  {
+    title: 'Instructor',
+    slug: 'instructor',
+    component: Instructor,
   },
 ];

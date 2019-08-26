@@ -31,7 +31,7 @@ body {
 
 @media print {
   .noprint {
-    display: none;
+    display: none !important;
   }
 }
 </style>

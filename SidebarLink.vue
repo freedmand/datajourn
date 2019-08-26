@@ -43,6 +43,9 @@ export default {
   methods: {
     clearSearch() {
       this.$store.commit("clearSearch");
+      if (document.body.offsetWidth <= 600) {
+        this.$store.commit("setExpanded", false);
+      }
     }
   }
 };

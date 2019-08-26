@@ -68,7 +68,7 @@
   left: 0;
   cursor: pointer;
   z-index: 4;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+  background: none;
   right: 0;
   text-align: left;
   transition: all 0.2s ease;
@@ -129,6 +129,28 @@ h1 {
   margin: 28px 0;
 }
 
+@media screen and (max-width: 1012px) {
+  .hamburger {
+    background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8)
+    );
+  }
+
+  .hamburger.expanded {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 1315px) {
+  .hamburger.expanded {
+    background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8)
+    );
+  }
+}
+
 @media screen and (max-width: 600px) {
   .hamburger.expanded {
     display: none;
@@ -160,6 +182,9 @@ export default {
   methods: {
     clearSearch() {
       this.$store.commit("clearSearch");
+      if (document.body.offsetWidth <= 600) {
+        this.expanded = false;
+      }
     },
     toggle() {
       this.expanded = !this.expanded;

@@ -1,12 +1,12 @@
 <template>
-  <div class="container" :class="{expanded}">
+  <div ref="container" class="container" :class="{expanded}">
     <div class="content" v-show="!searching">
       <div class="noprint">
         <!-- <Actions /> -->
       </div>
       <div class="pad"></div>
       <slot></slot>
-      <div class="arrows">
+      <div class="arrows noprint">
         <Arrow v-if="route.previous != null" direction="left" :route="route.previous" />
         <Arrow v-if="route.next != null" direction="right" :route="route.next" />
       </div>
@@ -59,6 +59,11 @@
   margin: 18px 0;
 }
 
+.content >>> h3 {
+  font-size: 19px;
+  margin: 16px 0;
+}
+
 .content >>> li {
   margin: 0.5em 0;
 }
@@ -91,6 +96,12 @@ export default {
     }),
     expanded() {
       return !this.$store.state.sidebarExpanded;
+    }
+  },
+  watch: {
+    $route() {
+      // Scroll to top of page
+      this.$refs.container.scrollTop = 0;
     }
   }
 };
