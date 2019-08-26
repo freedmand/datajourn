@@ -2,7 +2,7 @@
 <template>
   <div>
     <Sidebar :routes="routes" />
-    <Content>
+    <Content v-if="currentRoute != null" :route="currentRoute">
       <router-view></router-view>
     </Content>
   </div>
@@ -27,6 +27,12 @@ body {
 
   --sidebar-width: 300px;
   --sidebar-padding: 13.5px;
+}
+
+@media print {
+  .noprint {
+    display: none;
+  }
 }
 </style>
 
@@ -55,6 +61,19 @@ export default {
   router,
   data() {
     return { routes: nestedRoutes };
+  },
+  computed: {
+    currentRoute() {
+      const name = this.$route.name;
+      if (name == null) return null;
+
+      for (let i = 0; i < this.routes.length; i++) {
+        if (this.routes[i].name == name) {
+          return this.routes[i];
+        }
+      }
+      return null;
+    }
   },
   store
 };

@@ -1,8 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container" :class="{expanded}">
     <div class="content" v-show="!searching">
-      <Actions />
+      <div class="noprint">
+        <!-- <Actions /> -->
+      </div>
+      <div class="pad"></div>
       <slot></slot>
+      <div class="arrows">
+        <Arrow v-if="route.previous != null" direction="left" :route="route.previous" />
+        <Arrow v-if="route.next != null" direction="right" :route="route.next" />
+      </div>
     </div>
   </div>
 </template>
@@ -15,9 +22,17 @@
   right: 0;
   bottom: 0;
   text-align: left;
+  transition: all 0.2s ease;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
-@media screen and (max-width: 850px) {
+.container.expanded {
+  left: 0;
+}
+
+@media print {
   .container {
     left: 0;
   }
@@ -47,19 +62,36 @@
 .content >>> li {
   margin: 0.5em 0;
 }
+
+.pad {
+  margin-top: 64px;
+}
+
+.arrows {
+  display: block;
+  text-align: left;
+  margin: 2em 0;
+}
 </style>
 
 <script>
 import Actions from "./Actions";
+import Arrow from "./Arrow";
 
 import { mapState } from "vuex";
 
 export default {
-  components: { Actions },
+  components: { Actions, Arrow },
+  props: {
+    route: Object
+  },
   computed: {
     ...mapState({
       searching: state => state.searching
-    })
+    }),
+    expanded() {
+      return !this.$store.state.sidebarExpanded;
+    }
   }
 };
 </script>

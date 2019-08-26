@@ -10,12 +10,18 @@
 </template>
 
 <style scoped>
+.search {
+  position: relative;
+}
+
 input {
   background: white;
   height: 45px;
   width: 100%;
   border: none;
   border-bottom: var(--light-border);
+  border-top: var(--light-border);
+  border-radius: 0;
   font-size: 16px;
   font-family: inherit;
   padding-left: 52px;

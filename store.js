@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     searching: false,
     query: '',
+    sidebarExpanded: document.body.offsetWidth > 600,
   },
   mutations: {
     setSearch(state, searching) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     setQuery(state, query) {
       state.query = query;
+    },
+    setExpanded(state, expanded) {
+      state.sidebarExpanded = expanded;
     },
   },
 });

@@ -40,7 +40,11 @@ export default function(routes) {
   for (let i = 0; i < nested.length; i++) {
     if (i != 0) nested[i].previous = nested[i - 1];
     if (i != nested.length - 1) nested[i].next = nested[i + 1];
-    routerSpec.push({path: nested[i].path, component: nested[i].component});
+    routerSpec.push({
+      path: nested[i].path,
+      component: nested[i].component,
+      name: nested[i].name,
+    });
   }
 
   return {nestedRoutes: nested, routerSpec};

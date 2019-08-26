@@ -1,11 +1,17 @@
 <template>
-  <div>
-    <div class="hamburger" @click="toggle()">
+  <div class="noprint">
+    <div v-if="expanded" class="shim" @click="toggle()"></div>
+    <div class="hamburger" :class="{expanded}" @click="toggle()">
       <img src="./assets/hamburger.svg" />
     </div>
     <div class="sidebar" :class="{expanded}">
       <div class="sidebar-container">
-        <Search :routes="routes" />
+        <div class="hamburger-static" :class="{expanded}" @click="toggle()">
+          <img src="./assets/hamburger.svg" />
+        </div>
+        <div class="search">
+          <Search :routes="routes" />
+        </div>
 
         <router-link to="/" @click.native="clearSearch()">
           <h1>Data Journalism</h1>
@@ -26,7 +32,7 @@
   bottom: 0;
   width: 0;
   top: 0;
-  border-right: var(--light-border);
+  border-right: rgba(0, 0, 0, 0);
   box-sizing: border-box;
   background: #f9f9f9;
   z-index: 3;
@@ -35,8 +41,21 @@
   transition: all 0.2s ease;
 }
 
+.shim {
+  display: none;
+  position: fixed;
+  left: var(--sidebar-width);
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(#ffffffab, #ffffffd9);
+  z-index: 5;
+  cursor: pointer;
+}
+
 .sidebar.expanded {
   width: var(--sidebar-width);
+  border-right: var(--light-border);
 }
 
 .sidebar-container {
@@ -44,25 +63,51 @@
 }
 
 .hamburger {
-  position: absolute;
-  top: 14px;
-  left: calc(var(--sidebar-width) + 22px);
+  position: fixed;
+  top: 0;
+  left: 0;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+  right: 0;
+  text-align: left;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  height: 45px;
 }
 
-.hamburger:hover {
+.hamburger-static {
+  position: relative;
+  text-align: left;
+  visibility: hidden;
+  cursor: pointer;
+  pointer-events: none;
+  height: 45px;
+}
+
+.hamburger.expanded {
+  left: var(--sidebar-width);
+}
+
+.hamburger > img,
+.hamburger-static > img {
+  padding-top: 14px;
+  padding-left: 22px;
+  padding-bottom: 14px;
+  pointer-events: all;
+}
+
+.hamburger > img:hover,
+.hamburger-static > img:hover {
   opacity: var(--hover-opacity);
+}
+
+.search {
+  margin-top: -45px;
 }
 
 img {
   user-select: none;
-}
-
-@media screen and (max-width: 850px) {
-  .sidebar {
-    display: none;
-  }
 }
 
 a {
@@ -76,12 +121,30 @@ h1 {
   color: var(--accent);
   text-align: left;
   padding-left: var(--sidebar-padding);
-  margin-top: 42px;
+  margin-top: 22px;
   margin-bottom: 0;
 }
 
 .sidebar-links {
   margin: 28px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger.expanded {
+    display: none;
+  }
+
+  .hamburger-static {
+    visibility: visible;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .shim {
+    display: block;
+  }
 }
 </style>
 
@@ -94,17 +157,22 @@ export default {
   props: {
     routes: Array
   },
-  data() {
-    return {
-      expanded: true
-    };
-  },
   methods: {
     clearSearch() {
       this.$store.commit("clearSearch");
     },
     toggle() {
       this.expanded = !this.expanded;
+    }
+  },
+  computed: {
+    expanded: {
+      get() {
+        return this.$store.state.sidebarExpanded;
+      },
+      set(value) {
+        this.$store.commit("setExpanded", value);
+      }
     }
   }
 };
