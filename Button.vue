@@ -1,6 +1,6 @@
 <template>
   <span>
-    <img src="./assets/slides_icon.svg" v-if="icon == 'slides'" />
+    <img alt src="./assets/slides_icon.svg" v-if="icon == 'slides'" />
     <button>
       <slot></slot>
     </button>

@@ -68,6 +68,29 @@
   margin: 0.5em 0;
 }
 
+.content >>> img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.content >>> code {
+  background: #eeeeee;
+  padding: 2px 4px;
+}
+
+.content >>> summary {
+  outline: none;
+  cursor: pointer;
+}
+
+.content >>> .date {
+  margin-top: -20px;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 14px;
+}
+
 .pad {
   margin-top: 64px;
 }

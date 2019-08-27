@@ -1,5 +1,5 @@
 export default function(routes) {
-  const nested = [];
+  let nested = [];
   for (let i = 0; i < routes.length; i++) {
     const route = routes[i];
     if (route.children == null) {
@@ -9,6 +9,8 @@ export default function(routes) {
         compoundName: [route.title],
         path: '/' + route.slug,
         component: route.component,
+        releaseAfter: route.releaseAfter,
+        hidden: route.hidden,
         type: 'normal',
       });
     } else {
@@ -19,6 +21,8 @@ export default function(routes) {
         compoundName: [route.title],
         path: '/' + route.slug,
         component: route.component,
+        releaseAfter: route.releaseAfter,
+        hidden: route.hidden,
         type: 'normal',
       });
       for (let j = 0; j < route.children.length; j++) {
@@ -29,10 +33,23 @@ export default function(routes) {
           compoundName: [route.title, subroute.title],
           path: '/' + [route.slug, subroute.slug].join('/'),
           component: subroute.component,
+          releaseAfter: subroute.releaseAfter,
+          hidden: subroute.hidden,
           type: 'nested',
         });
       }
     }
+  }
+
+  // Filter out non-released
+  if (window.location.search.indexOf('showall') == -1) {
+    const currentDate = new Date();
+    nested = nested.filter(route => {
+      if (route.releaseAfter != null) {
+        if (currentDate < route.releaseAfter) return false;
+      }
+      return true;
+    });
   }
 
   // Populate previous and next routes.

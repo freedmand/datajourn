@@ -1,8 +1,8 @@
 <template>
   <router-link :to="route.path" @click.native="clearSearch()">
     <div class="arrow">
-      <img v-if="direction == 'left'" src="./assets/left_arrow.svg" />
-      <img v-if="direction == 'right'" src="./assets/right_arrow.svg" />
+      <img aria-label="Previous Page" alt v-if="direction == 'left'" src="./assets/left_arrow.svg" />
+      <img aria-label="Next Page" alt v-if="direction == 'right'" src="./assets/right_arrow.svg" />
     </div>
   </router-link>
 </template>

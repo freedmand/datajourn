@@ -1,7 +1,13 @@
 <template>
   <div class="search">
-    <img src="./assets/search_icon.svg" />
-    <input @input="change($event)" type="text" placeholder="Search" v-model="query" />
+    <img alt src="./assets/search_icon.svg" />
+    <input
+      aria-label="Search"
+      @input="change($event)"
+      type="text"
+      placeholder="Search"
+      v-model="query"
+    />
     <div class="invisible">
       <FullText v-if="searching" :routes="routes" @fulltext="handleFullText($event)" />
     </div>
@@ -43,6 +49,7 @@ img {
   opacity: 0;
   overflow: hidden;
   pointer-events: none;
+  display: none;
 }
 
 ::placeholder {

@@ -2,12 +2,12 @@
   <div class="noprint">
     <div v-if="expanded" class="shim" @click="toggle()"></div>
     <div class="hamburger" :class="{expanded}" @click="toggle()">
-      <img src="./assets/hamburger.svg" />
+      <img alt src="./assets/hamburger.svg" />
     </div>
     <div class="sidebar" :class="{expanded}">
       <div class="sidebar-container">
         <div class="hamburger-static" :class="{expanded}" @click="toggle()">
-          <img src="./assets/hamburger.svg" />
+          <img alt src="./assets/hamburger.svg" />
         </div>
         <div class="search">
           <Search :routes="routes" />
@@ -18,7 +18,7 @@
         </router-link>
 
         <div class="sidebar-links">
-          <SidebarLink v-for="(route, i) in routes" :key="i" :route="route" />
+          <SidebarLink v-for="(route, i) in sidebarRoutes" :key="i" :route="route" />
         </div>
       </div>
     </div>
@@ -198,6 +198,11 @@ export default {
       set(value) {
         this.$store.commit("setExpanded", value);
       }
+    },
+    sidebarRoutes() {
+      return this.routes.filter(
+        route => route.hidden == null || route.hidden == false
+      );
     }
   }
 };

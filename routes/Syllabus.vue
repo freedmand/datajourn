@@ -2,7 +2,10 @@
   <div>
     <h1>Data Journalism Syllabus</h1>
     <h2>JRN 3605 - Temple University, Fall 2019</h2>
-    <h4>Tuesdays and Thursdays 2-3:30 p.m., AH002</h4>
+    <h4>
+      Tuesdays and Thursdays 2-3:30 p.m., AH002
+      <br />3 Credit Hours
+    </h4>
     <p>
       Instructor: Dylan Freedman
       <br />
@@ -30,7 +33,7 @@
 
     <h4>Class work</h4>
 
-    <p>This class will be project-based. Rather than work on small homework assignments, students will hone the skills they learn in this class and actually apply them to do real data-driven reporting, visualization, and coding. There will be two or three smaller projects focused on the different aspects of data journalism, and one final project where a student synthesizes across the skills learned or hones in on a single specialty. The class will be adaptable based on the students’ areas of expertise and what they want to learn. For example, there is a possibility if students have complementary skills that we could work on a single class project together and function as a mini data-driven newsroom.</p>
+    <p>This class will be project-based. Rather than work on small homework assignments all the time, students will hone the skills they learn in this class and actually apply them to do real data-driven reporting, visualization, and coding (though there will be exercises every now and then). There will be three smaller projects focused on the different aspects of data journalism, and one final project where a student synthesizes across the skills learned or hones in on a single specialty. In addition, students will be expected to complete readings and tutorials outside of class time. The class will be adaptable based on the students’ areas of expertise and what they want to learn. For example, there is a possibility if students have complementary skills that we could work on a single class project together and function as a mini data-driven newsroom.</p>
 
     <h4>Course outline</h4>
 
@@ -41,17 +44,17 @@
 
     <h4>Grading</h4>
 
-    <p>I am not looking for you to master the craft of data journalism so much as you genuinely caring to engage. As long as it’s clear that you consistently put effort into what you do and are showing up to class, you should earn full marks. If you are buried with other course work, we can look for ways to combine that work with data journalism in interesting ways. I’m not as interested in perfectly produced pieces with no grammar mistakes as trying new and ambitious things, getting your hands dirty, and being creative. A rough rubric (subject to change) is as follows:</p>
+    <p>I am not looking for you mastery of the craft of data journalism so much as genuinely caring to engage. As long as it’s clear that you consistently put effort into what you do and are showing up to class, you should earn full marks. If you are buried with other course work, we can look for ways to combine that work with data journalism in interesting ways. This course is less about perfectly produced pieces with no grammar mistakes and more about trying new and ambitious things, getting your hands dirty, and being creative. A rough rubric (subject to change) is as follows:</p>
 
     <ul>
       <li>Smaller projects: 30%</li>
-      <li>Attendance and in-class contributions: 30%</li>
+      <li>Attendance and participation: 30%</li>
       <li>Final project: 40%</li>
     </ul>
 
     <h4>Attendance</h4>
 
-    <p>Attendance is mandatory. Talk to me ahead of time if you have to miss a class, and we can figure out ways for you to catch up without penalizing you. Each unexcused absence (without reaching out to me ahead of time) will cost 5% of your final grade.</p>
+    <p>Attendance and showing up on time is a sign of respect, not only to me but also to your peers. We learn best when we’re all in it together. Talk to me ahead of time if you have to miss a class, and we can figure out ways for you to catch up.</p>
 
     <h4>Policies</h4>
 
@@ -75,6 +78,30 @@
     </p>
 
     <h3>University resources</h3>
+
+    <h4>Disability disclosure statement</h4>
+
+    <p>Any student who has a need for accommodation based on the impact of a documented disability, including special accommodations for access to technology resources and electronic instructional materials required for the course, should contact me privately to discuss the specific situation by the end of the second week of classes or as soon as practical. If you have not done so already, please contact Disability Resources and Services (DRS) at 215-204-1280 in 100 Ritter Annex to learn more about the resources available to you. I will work with DRS to coordinate reasonable accommodations for all students with documented disabilities.</p>
+
+    <h4>Basic needs</h4>
+
+    <p>
+      Any students who face challenges securing their food or housing and believes this may affect their performance in the course is urged to contact the Dean of Students for support. In the Howard Gittis Student Center, there is now a
+      <a
+        href="https://studentcenter.temple.edu/cherry-pantry"
+      >pantry</a> where students can pick up basic food and supplies, if needed. If you are comfortable in doing so, please speak with me, so that I can help you as best I can.
+    </p>
+
+    <h4>Mental health</h4>
+
+    <p>
+      If you are seeking support for mental health needs, please contact
+      <a
+        href="https://counseling.temple.edu/"
+      >Tuttleman Counseling Services</a>. If you feel comfortable doing so, you may also speak with me.
+    </p>
+
+    <h4>Academic support</h4>
     <p>
       The
       <a href="http://www.temple.edu/class/">Student Success Center</a> provides free academic support for all Temple students. More information is available by visiting

@@ -10,7 +10,7 @@
       <em>Week 1: Aug 27 and 29</em>
     </p>
     <ul>
-      <li>Data journalism</li>
+      <li>What is data journalism?</li>
       <li>Examples of data-driven stories</li>
       <li>See! You can code</li>
     </ul>

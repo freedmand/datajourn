@@ -21,7 +21,7 @@ body {
 }
 
 * {
-  --accent: #e71d3e;
+  --accent: #e60022;
   --light-border: 1px solid rgba(0, 0, 0, 0.15);
   --hover-opacity: 0.8;
 
@@ -53,7 +53,7 @@ const { nestedRoutes, routerSpec } = computeRoutes(routes);
 
 const router = new Router({
   mode: "history",
-  routes: routerSpec
+  routes: [...routerSpec, { path: "*", redirect: "/404" }]
 });
 
 export default {
@@ -61,6 +61,12 @@ export default {
   router,
   data() {
     return { routes: nestedRoutes };
+  },
+  mounted() {
+    document.body.addEventListener("keydown", this.handleKeypress);
+  },
+  destroyed() {
+    document.body.removeEventListener("keydown", this.handleKeypress);
   },
   computed: {
     currentRoute() {
@@ -73,6 +79,29 @@ export default {
         }
       }
       return null;
+    }
+  },
+  methods: {
+    handleKeypress(e) {
+      if (e.shiftKey) {
+        if (e.key == "ArrowLeft") {
+          this.previous();
+        } else if (e.key == "ArrowRight") {
+          this.next();
+        }
+      }
+    },
+    previous() {
+      if (this.currentRoute == null) return;
+      if (this.currentRoute.previous != null) {
+        this.$router.push({ name: this.currentRoute.previous.name });
+      }
+    },
+    next() {
+      if (this.currentRoute == null) return;
+      if (this.currentRoute.next != null) {
+        this.$router.push({ name: this.currentRoute.next.name });
+      }
     }
   },
   store

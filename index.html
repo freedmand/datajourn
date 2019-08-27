@@ -5,10 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap" rel="stylesheet">
-  <link href="./assets/favicon.png" rel="icon" type="image/png">
+  <link href="/favicon.png" rel="icon" type="image/png">
   <title>Data Journalism</title>
+  <meta name="description" content="A data journalism course that teaches how to find data, extract stories from data, and package data in visual and interactive ways."/>
 </head>
 <body>
     <div id="app"></div>
+    <script>
+    // Not strict mode so we can have some fun
+    window.runCode = function(code, context) {
+      // Replace console.
+      const oldConsole = window.console;
+      window.console = context.console;
+
+      let error = null;
+      let result = null;
+
+      // Create iframe in which to run code.
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      try {
+        result = iframe.contentWindow.eval(code);
+      } catch (e) {
+        error = e;
+      }
+      window.console = oldConsole;
+      document.body.removeChild(iframe);
+
+      if (error == null) return result;
+      throw error;
+    }
+    </script>
 </body>
 </html>
