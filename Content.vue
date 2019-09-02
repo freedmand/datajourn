@@ -35,6 +35,7 @@
 @media print {
   .container {
     left: 0;
+    position: relative;
   }
 }
 
@@ -89,6 +90,14 @@
   font-weight: normal;
   font-style: italic;
   font-size: 14px;
+}
+
+.content >>> details {
+  margin: 1em 0;
+}
+
+.content >>> video {
+  width: 100%;
 }
 
 .pad {

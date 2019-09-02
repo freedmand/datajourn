@@ -41,7 +41,7 @@
 
     <p>
       <a
-        href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+        href="https://www.propublica.org/article/facebook-lets-advertisers-exclude-users-by-race"
       >ProPublica - Facebook Lets Advertisers Exclude Users by Race</a> &mdash; reporters purchased ads on Facebook targeted towards house hunters, and set the ads to exclude anyone with an “ethnic affinity” of African-American, Asian-American, or Hispanic. Facebook approved the ads despite them being illegal, a violation of the federal Fair Housing Act.
     </p>
 

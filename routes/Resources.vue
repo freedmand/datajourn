@@ -139,5 +139,26 @@
         >Data Visualization for Storytelling and Discovery</a>
       </li>
     </ul>
+
+    <p>
+      <b>Datasets</b>
+    </p>
+    <ul>
+      <li>
+        OpenDataPhilly:
+        <a
+          href="https://www.opendataphilly.org/"
+        >Data portal for Philadelphia used by the government and other agencies</a>
+      </li>
+      <li>
+        <a
+          href="https://www.philasd.org/performance/programsservices/open-data/"
+        >School District of Philadelphia - Open Data</a>: Data from the School District of Philadelphia
+      </li>
+      <li>
+        World Bank Open Data:
+        <a href="https://data.worldbank.org/">Datasets on global development</a>
+      </li>
+    </ul>
   </div>
 </template>

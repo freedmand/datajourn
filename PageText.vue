@@ -1,6 +1,6 @@
 <template>
   <div ref="pagetext">
-    <component :is="route.component"></component>
+    <component :is="route.component" renderfull="false"></component>
   </div>
 </template>
 
