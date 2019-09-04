@@ -26,6 +26,12 @@ export default {
     reset() {
       this.file = null;
     }
+  },
+  mounted() {
+    const plugin = document.createElement("script");
+    plugin.setAttribute("src", "https://unpkg.com/canvas-datagrid");
+    plugin.async = true;
+    document.head.appendChild(plugin);
   }
 };
 </script>

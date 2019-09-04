@@ -100,6 +100,24 @@
   width: 100%;
 }
 
+.content >>> img.medium {
+  max-width: 500px;
+  border: solid 1px gainsboro;
+  margin: 0;
+}
+
+.content >>> img.medium.vert {
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border: solid 1px gainsboro;
+  margin: 0;
+}
+
+.content >>> img.pb {
+  margin-bottom: 2.5em;
+}
+
 .pad {
   margin-top: 64px;
 }

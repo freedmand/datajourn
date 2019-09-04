@@ -5,6 +5,7 @@ import Outline from './routes/Outline';
 import Resources from './routes/Resources';
 import Instructor from './routes/Instructor';
 
+// Week 1
 import Week1 from './routes/week1/Week1';
 import IceBreaker from './routes/week1/IceBreaker';
 import Intro from './routes/week1/Intro';
@@ -17,6 +18,15 @@ import DataFormats from './routes/week1/DataFormats';
 import SpreadsheetTips from './routes/week1/SpreadsheetTips';
 import ExampleDatasets from './routes/week1/ExampleDatasets';
 import SpreadsheetAssignment from './routes/week1/SpreadsheetAssignment';
+
+// Week 2
+import Week2 from './routes/week2/Week2';
+import Class3Data from './routes/week2/Class3Data';
+import Class4Pivots from './routes/week2/Class4Pivots';
+// import BabyNames from './routes/week2/BabyNames';
+import ElectionResults from './routes/week2/ElectionResults';
+import ElectionAssignment from './routes/week2/ElectionAssignment';
+import PivotGuide from './routes/week2/PivotGuide';
 
 import Tools from './routes/tools/Tools';
 import Spreadsheet from './routes/tools/Spreadsheet';
@@ -65,15 +75,32 @@ export default [
     component: Instructor,
   },
   {
-    title: 'Tools',
-    slug: 'tools',
-    component: Tools,
+    title: 'Week 2 - Spreadsheet Deep-Dive',
+    slug: 'week-2',
+    component: Week2,
     children: [
+      {title: 'Class 3: Strength in Numbers', slug: 'class-3', component: Class3Data},
       {
-        title: 'Spreadsheet',
-        slug: 'spreadsheet',
-        component: Spreadsheet,
+        title: 'Analyzing Election Results',
+        slug: 'election-results',
+        component: ElectionResults,
       },
+      {
+        title: 'Assignment: Election Results',
+        slug: 'election-assignment',
+        component: ElectionAssignment,
+      },
+      {
+        title: 'Class 4: Pivot Tables',
+        slug: 'class-4',
+        component: Class4Pivots,
+      },
+      {
+        title: 'Pivot Tables: An Illustrated Guide',
+        slug: 'pivot-guide',
+        component: PivotGuide,
+      },
+      // {title: 'Assignment: Baby Names', slug: 'babynames', component: BabyNames},
     ],
   },
   {
@@ -135,6 +162,18 @@ export default [
         title: 'Spreadsheet Mini Assignment',
         slug: 'spreadsheet-assignment',
         component: SpreadsheetAssignment,
+      },
+    ],
+  },
+  {
+    title: 'Tools',
+    slug: 'tools',
+    component: Tools,
+    children: [
+      {
+        title: 'Spreadsheet Preview',
+        slug: 'spreadsheet',
+        component: Spreadsheet,
       },
     ],
   },
