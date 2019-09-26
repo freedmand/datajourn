@@ -12,12 +12,12 @@ echo "Creating output movie: $outputmov"
 echo "Creating output image: $outputimg"
 
 # from https://www.shellhacks.com/yes-no-bash-script-prompt-confirmation/
-read -p "Would you like to proceed [y/n]? " -n 1 -r
-echo ""
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    exit 1
-fi
+# read -p "Would you like to proceed [y/n]? " -n 1 -r
+# echo ""
+# if [[ ! $REPLY =~ ^[Yy]$ ]]
+# then
+#     exit 1
+# fi
 
 mkdir -p "$(dirname "$output")"
 
