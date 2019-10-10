@@ -48,6 +48,18 @@ import BarGraphAssignment from './routes/week5/BarGraphAssignment';
 import Class9 from './routes/week5/Class9';
 import PortfolioMockAssignment from './routes/week5/PortfolioMockAssignment';
 
+// Week 6
+import Week6 from './routes/week6/Week6';
+import Class10 from './routes/week6/Class10';
+import HTMLBridgesAssignment from './routes/week6/HTMLBridgesAssignment';
+import Class11 from './routes/week6/Class11';
+import HTMLWebsiteAssignment from './routes/week6/HTMLWebsiteAssignment';
+
+// Week 7
+import Week7 from './routes/week7/Week7';
+import Class12 from './routes/week7/Class12';
+import SurveyAssignment from './routes/week7/SurveyAssignment';
+
 import Tools from './routes/tools/Tools';
 import Spreadsheet from './routes/tools/Spreadsheet';
 
@@ -93,6 +105,43 @@ export default [
     title: 'Instructor',
     slug: 'instructor',
     component: Instructor,
+  },
+  {
+    title: 'Week 7 - Halfway Point',
+    slug: 'week-7',
+    component: Week7,
+    children: [
+      {title: 'Class 12: Recap', slug: 'class-12', component: Class12},
+      {
+        title: 'Mid-Semester Survey Assignment',
+        slug: 'survey',
+        component: SurveyAssignment,
+      },
+    ],
+  },
+  {
+    title: 'Week 6 - HTML',
+    slug: 'week-6',
+    component: Week6,
+    children: [
+      {title: 'Class 10: Intro to HTML', slug: 'class-10', component: Class10},
+      {
+        title: 'HTML Bridges Assignment',
+        slug: 'html-bridges-assignment',
+        component: HTMLBridgesAssignment,
+      },
+
+      {
+        title: 'Class 11: Intro to CSS',
+        slug: 'slug-11',
+        component: Class11,
+      },
+      {
+        title: 'HTML Website Assignment',
+        slug: 'html-website-assignment',
+        component: HTMLWebsiteAssignment,
+      },
+    ],
   },
   {
     title: 'Week 5 - Working with Figma',
