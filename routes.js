@@ -59,6 +59,8 @@ import HTMLWebsiteAssignment from './routes/week6/HTMLWebsiteAssignment';
 import Week7 from './routes/week7/Week7';
 import Class12 from './routes/week7/Class12';
 import SurveyAssignment from './routes/week7/SurveyAssignment';
+import Class13 from './routes/week7/Class13';
+import CrashData from './routes/week7/CrashData';
 
 import Tools from './routes/tools/Tools';
 import Spreadsheet from './routes/tools/Spreadsheet';
@@ -80,7 +82,7 @@ import Spreadsheet from './routes/tools/Spreadsheet';
 // const CLASS_END = [15, 30]; // 3:30pm
 
 export default [
-  {title: 'Not Found', slug: '404', component: NotFound, hidden: true},
+  { title: 'Not Found', slug: '404', component: NotFound, hidden: true },
   {
     title: 'Home',
     slug: '',
@@ -111,12 +113,14 @@ export default [
     slug: 'week-7',
     component: Week7,
     children: [
-      {title: 'Class 12: Recap', slug: 'class-12', component: Class12},
+      { title: 'Class 12: Recap', slug: 'class-12', component: Class12 },
       {
         title: 'Mid-Semester Survey Assignment',
         slug: 'survey',
         component: SurveyAssignment,
       },
+      { title: 'Class 13: AutoSepta Exploration', slug: 'class-13', component: Class13 },
+      { title: 'Crash Data', slug: 'crashes', component: CrashData },
     ],
   },
   {
@@ -124,7 +128,7 @@ export default [
     slug: 'week-6',
     component: Week6,
     children: [
-      {title: 'Class 10: Intro to HTML', slug: 'class-10', component: Class10},
+      { title: 'Class 10: Intro to HTML', slug: 'class-10', component: Class10 },
       {
         title: 'HTML Bridges Assignment',
         slug: 'html-bridges-assignment',
@@ -148,8 +152,8 @@ export default [
     slug: 'week-5',
     component: Week5,
     children: [
-      {title: 'Class 8: Diving into Figma', slug: 'class-8', component: Class8},
-      {title: 'Figma Tips', slug: 'figma-tips', component: FigmaTips},
+      { title: 'Class 8: Diving into Figma', slug: 'class-8', component: Class8 },
+      { title: 'Figma Tips', slug: 'figma-tips', component: FigmaTips },
       {
         title: 'Bar Graph Assignment',
         slug: 'bar-graph-assignment',
@@ -172,7 +176,7 @@ export default [
     slug: 'week-4',
     component: Week4,
     children: [
-      {title: 'Class 6: Records, Pitches, Design', slug: 'class-6', component: Class6},
+      { title: 'Class 6: Records, Pitches, Design', slug: 'class-6', component: Class6 },
       {
         title: 'Class 7: Basics of Visual Design',
         slug: 'class-7',
@@ -190,7 +194,7 @@ export default [
     slug: 'week-3',
     component: Week3,
     children: [
-      {title: 'Class 5: Public Records', slug: 'class-5', component: Class5},
+      { title: 'Class 5: Public Records', slug: 'class-5', component: Class5 },
       {
         title: 'FOIA FBI Letter Assignment',
         slug: 'foia-fbi',
@@ -203,7 +207,7 @@ export default [
     slug: 'week-2',
     component: Week2,
     children: [
-      {title: 'Class 3: Strength in Numbers', slug: 'class-3', component: Class3Data},
+      { title: 'Class 3: Strength in Numbers', slug: 'class-3', component: Class3Data },
       {
         title: 'Analyzing Election Results',
         slug: 'election-results',
