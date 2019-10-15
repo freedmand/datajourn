@@ -65,6 +65,12 @@ import CrashData from './routes/week7/CrashData';
 import Tools from './routes/tools/Tools';
 import Spreadsheet from './routes/tools/Spreadsheet';
 
+// Week 8
+import Week8 from './routes/week8/Week8';
+import Class14 from './routes/week8/Class14';
+import AutoSeptaSite from './routes/week8/AutoSeptaSite';
+import CodePenSite from './routes/week8/CodePenSite';
+
 // const MONTHS = {
 //   JAN: 0,
 //   FEB: 1,
@@ -107,6 +113,16 @@ export default [
     title: 'Instructor',
     slug: 'instructor',
     component: Instructor,
+  },
+  {
+    title: 'Week 8 - Websites',
+    slug: 'week-8',
+    component: Week8,
+    children: [
+      { title: 'Class 14: Making a website', slug: 'class-14', component: Class14 },
+      { title: 'AutoSepta Site Exercise', slug: 'autosepta-site', component: AutoSeptaSite },
+      { title: 'CodePen Conversion Assignment', slug: 'codepen-conversion', component: CodePenSite },
+    ],
   },
   {
     title: 'Week 7 - Halfway Point',
